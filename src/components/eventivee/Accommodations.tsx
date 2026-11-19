@@ -107,7 +107,7 @@ export default function Accommodations({ data }: AccommodationsProps) {
   };
 
   return (
-    <section className="mt-16 md:mt-24">
+    <section id="hotels" className="mt-16 md:mt-24 scroll-mt-24">
       {/* Header */}
       <div className="mb-8">
         <motion.h3
