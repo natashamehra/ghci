@@ -35,6 +35,7 @@ export default function EventiveePage() {
   const tracksData = getContentData('explore-tracks');
   const expectData = getContentData('what-to-expect');
   const speakersData = getContentData('speakers');
+  const agendaData = getContentData('agenda');
   const architectsData = getContentData('architects');
   const involveData = getContentData('ways-to-involve');
   const partnerData = getContentData('partner-with-us');
@@ -69,6 +70,7 @@ export default function EventiveePage() {
       <Ticketing />
 
       <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
+      <div id="schedule">{agendaData && <Schedule data={agendaData as any} />}</div>
       <div id="architects">{architectsData && <Architects data={architectsData as any} />}</div>
       <div id="involve">{involveData && <WaysToInvolve data={involveData as any} />}</div>
       
