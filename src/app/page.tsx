@@ -69,7 +69,8 @@ export default function EventiveePage() {
       {/* New Ticketing Section */}
       <Ticketing />
 
-      <div id="schedule">{agendaData && <Schedule data={agendaData as any} />}</div>
+      {/* Agenda section hidden for now - pending client change requests. Re-enable by uncommenting:
+      <div id="schedule">{agendaData && <Schedule data={agendaData as any} />}</div> */}
 
       <div id="speakers">{speakersData && <SpeakerGrid data={speakersData as any} />}</div>
       <div id="architects">{architectsData && <Architects data={architectsData as any} />}</div>
