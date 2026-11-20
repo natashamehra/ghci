@@ -203,8 +203,8 @@ export default function Schedule({ data }: ScheduleProps) {
       className="relative w-full overflow-hidden text-white leading-[normal]"
       style={{
         ['--u' as string]: 'calc(min(100vw, 600px) / 1080)',
-        // Base matches the neighbours: Speakers above is #000, the page (Architects) below is #070708.
-        background: 'linear-gradient(to bottom, #000 0%, #070708 100%)',
+        // Base matches the neighbours: Passes above and Speakers below both end on #000.
+        background: '#000',
       }}
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 lg:hidden" style={{ background: MOBILE_BG, ...edgeFade('160px') }} />
