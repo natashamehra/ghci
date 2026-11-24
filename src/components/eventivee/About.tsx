@@ -4,6 +4,7 @@ import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
 import { useState, useRef } from 'react';
 
 import ScrollReveal from '../ui/ScrollReveal';
+import MobileSeamFade from './MobileSeamFade';
 
 type AboutProps = {
   data: {
@@ -56,6 +57,9 @@ export default function About({ data }: AboutProps) {
                 backgroundRepeat: 'no-repeat'
             }}
         />
+        {/* Mobile: the background artwork is cropped at the section edges, so fade it out */}
+        <MobileSeamFade edge="top" color="#000" height={120} />
+        <MobileSeamFade edge="bottom" color="#000" height={180} />
         {/* Dark overlay for consistent cinematic look */}
       <div className="w-full relative z-10">
         

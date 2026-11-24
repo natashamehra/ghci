@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import MobileSeamFade from './MobileSeamFade';
 
 type FooterProps = {
   data?: {
@@ -32,6 +33,7 @@ export default function Footer({ data }: FooterProps) {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
     }}>
+        <MobileSeamFade edge="top" color="#000" height={180} />
         <div className="w-full relative z-10">
             <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-8 pb-20">
                 

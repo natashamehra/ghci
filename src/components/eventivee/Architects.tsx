@@ -16,7 +16,7 @@ type ArchitectsProps = {
 
 export default function Architects({ data }: ArchitectsProps) {
   return (
-    <section id="architects" className="py-16 md:py-24 text-white px-4 md:px-14 relative overflow-hidden">
+    <section id="architects" className="py-16 md:py-24 text-white px-4 md:px-14 relative overflow-hidden max-md:bg-[linear-gradient(to_bottom,#000_0%,#070708_30%,#120110_100%)]">
       <div className="w-full flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
         
         {/* Left: Text Content */}

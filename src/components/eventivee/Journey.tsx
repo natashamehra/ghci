@@ -13,7 +13,7 @@ type JourneyProps = {
 
 export default function Journey({ data }: JourneyProps) {
   return (
-    <section id="journey" className="py-16 md:py-24 text-white px-4 md:px-14 bg-[#070708] relative overflow-hidden">
+    <section id="journey" className="py-16 md:py-24 text-white px-4 md:px-14 bg-[#070708] max-md:bg-black relative overflow-hidden">
       <div className="w-full">
         {/* Header */}
         <div className="text-center mb-16">

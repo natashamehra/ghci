@@ -4,6 +4,7 @@ import { Calendar, Ticket, Settings, X } from 'lucide-react';
 import { useRef, useState, useEffect, useMemo } from 'react';
 import Marquee from './Marquee';
 import CountdownTimer from './CountdownTimer';
+import MobileSeamFade from './MobileSeamFade';
 
 type HeroProps = {
   data: {
@@ -280,12 +281,12 @@ export default function Hero({ data }: HeroProps) {
       </div>
 
       {/* Bottom Gradient Fade to merge with next section */}
-      <div 
-        className="absolute bottom-0 left-0 w-full h-[100px] z-20 pointer-events-none"
-        style={{ 
-          background: 'linear-gradient(to bottom, transparent, #070708)' 
-        }}
+      {/* Ends in #070708 on desktop; pure black on mobile to match the section below */}
+      <div
+        className="absolute bottom-0 left-0 w-full h-[100px] z-20 pointer-events-none bg-gradient-to-b from-transparent to-[#070708] max-md:to-black"
       />
+      {/* Mobile: longer fade so the bokeh glow eases into the black section below */}
+      <MobileSeamFade edge="bottom" color="#000" height={200} className="z-[5]" />
 
       {/* Debug Settings Panel (Hidden by default, toggle with Ctrl+Shift+D) */}
       {showSettings && (

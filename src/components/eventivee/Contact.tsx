@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Ticket, Mail, X, Settings } from 'lucide-react';
 import { useRef, useState, useEffect } from 'react';
 import NewsletterModal from './NewsletterModal';
+import MobileSeamFade from './MobileSeamFade';
 
 type ContactProps = {
   data: {
@@ -65,7 +66,7 @@ export default function Contact({ data }: ContactProps) {
             '--x': xPx,
             '--y': yPx
         } as any}
-        className="py-6 md:py-24 bg-black text-white px-4 md:px-13 border-t border-white/[0.05] relative overflow-hidden group/contact"
+        className="py-6 md:py-24 bg-black text-white px-4 md:px-13 md:border-t border-white/[0.05] relative overflow-hidden group/contact"
     >
         {/* Halftone Overlay */}
         <div 
@@ -85,6 +86,9 @@ export default function Contact({ data }: ContactProps) {
                 background: `radial-gradient(circle ${config.shineSize * 1.5}px at var(--x) var(--y), ${config.shineColor}${Math.round(config.shineStrength * 255).toString(16).padStart(2, '0')}, transparent)`
             }}
         />
+
+        {/* Mobile: the spotlight rests at the top-left corner, so ease it in from the section above */}
+        <MobileSeamFade edge="top" color="#000" height={140} className="z-[1]" />
 
       <div className="w-full relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-12 mb-12">
