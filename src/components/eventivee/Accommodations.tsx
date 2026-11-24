@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Info } from 'lucide-react';
 
@@ -29,6 +29,19 @@ type AccommodationsProps = {
 };
 
 export default function Accommodations({ data }: AccommodationsProps) {
+  // Layout above this section shifts as images/maps load, so the browser's
+  // initial hash scroll can land short. Re-align once the page has settled.
+  useEffect(() => {
+    if (window.location.hash !== '#hotels') return;
+    const align = () => document.getElementById('hotels')?.scrollIntoView();
+    const timers = [300, 1000, 2500].map((ms) => setTimeout(align, ms));
+    window.addEventListener('load', align);
+    return () => {
+      timers.forEach(clearTimeout);
+      window.removeEventListener('load', align);
+    };
+  }, []);
+
   // First category open by default as shown in the design mockup
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -107,7 +120,7 @@ export default function Accommodations({ data }: AccommodationsProps) {
   };
 
   return (
-    <section className="mt-16 md:mt-24">
+    <section id="hotels" className="mt-16 md:mt-24 scroll-mt-24">
       {/* Header */}
       <div className="mb-8">
         <motion.h3
